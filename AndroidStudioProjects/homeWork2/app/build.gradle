@@ -16,11 +16,36 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+        }
+
+        qa{
+            initWith debug
+            applicationIdSuffix ".test"
+        }
+
         release {
+            signingConfig signingConfigs.debug
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions 'type'
+
+    productFlavors {
+        free {
+            dimension 'type'
+            applicationIdSuffix ".free"
+        }
+        paid {
+            dimension 'type'
+            applicationIdSuffix ".paid"
+        }
+    }
+
+
 }
 
 dependencies {
