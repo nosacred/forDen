@@ -17,6 +17,14 @@ public class DepositAccount extends BankAccount {
     }
 
     @Override
+    public void dropMoney(double amount) {
+        LocalDate now = LocalDate.now();
+        if (now.isAfter(lastPlus.plusMonths(1))) {
+            super.dropMoney(amount);
+        }
+    }
+
+    @Override
     public boolean sendMoney(BankAccount client, double amount) {
         LocalDate now = LocalDate.now();
         if (now.isAfter(lastPlus.plusMonths(1))) {
