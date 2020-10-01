@@ -17,10 +17,10 @@ public class DepositAccount extends BankAccount {
     }
 
     @Override
-    public void dropMoney(double amount) {
+    public void takeMoney(double amount) {
         LocalDate now = LocalDate.now();
         if (now.isAfter(lastPlus.plusMonths(1))) {
-            super.dropMoney(amount);
+            super.takeMoney(amount);
         }
     }
 

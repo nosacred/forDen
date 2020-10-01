@@ -10,7 +10,7 @@ public class BankAccount {
         balance+= amount;
     }
 
-    public void dropMoney(double amount){
+    public void takeMoney(double amount){
         if(balance >= amount){
             balance-=amount;
         }

@@ -6,10 +6,10 @@ public class CardAccount extends BankAccount {
     }
 
     @Override
-    public void dropMoney(double amount) {
+    public void takeMoney(double amount) {
         if(getBalance() >= amount*1.01){
-            super.dropMoney(amount);
-            super.dropMoney(amount*0.01);
+            super.takeMoney(amount);
+            super.takeMoney(amount*0.01);
         }
     }
 }
