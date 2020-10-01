@@ -22,7 +22,7 @@ public class BankAccount {
 
     public boolean sendMoney(BankAccount client, double amount){
         if (balance >= amount){
-            balance-=amount;
+            takeMoney(amount);
             client.putMoney(amount);
             System.out.println("Произошло списание денежных средств в размере: "+ amount);
             return true;
