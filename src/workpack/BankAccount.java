@@ -29,7 +29,7 @@ public class BankAccount {
             System.out.println("Произошло списание денежных средств в размере: "+ Math.abs(amount));
             return true;
         }
-        else System.out.println(" На вашем счете недостаточно средств для совершения данной операции! Пополните баланс");
+        else System.out.println("На вашем счете недостаточно средств для совершения данной операции! Пополните баланс");
         return false;
     }
 
