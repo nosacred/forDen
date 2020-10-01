@@ -5,26 +5,32 @@ public class BankAccount {
     BankAccount(double x){
         balance= x;
     }
-    public void getMoney(double amount){
+
+    public void putMoney(double amount){
         balance+= amount;
     }
-    public void getMoney(BankAccount client, double  amount) {
-        balance += amount;
-        System.out.println("Ваш Баланс пополнен! Зачислено " + amount);
+
+    public void dropMoney(double amount){
+        if(balance >= amount){
+            balance-=amount;
+        }
     }
+
+    public double getBalance() {
+        return balance;
+    }
+
     public boolean sendMoney(BankAccount client, double amount){
         if (balance >= amount){
             balance-=amount;
-            client.getMoney(client, amount);
+            client.putMoney(amount);
             System.out.println("Произошло списание денежных средств в размере: "+ amount);
             return true;
         }
         else System.out.println(" На вашем счете недостаточно средств для совершения данной операции! Пополните баланс");
         return false;
     }
-    public double getBalance() {
-        return balance;
-    }
+
 }
 
 

@@ -10,7 +10,7 @@ public class Main {
         System.out.println(deposit1.sendMoney(card1, 1000));
 
         card1.sendMoney(deposit1,5000);
-        deposit1.getMoney(500);
+        deposit1.putMoney(500);
 
         System.out.println(deposit1.getBalance());
         System.out.println(card1.getBalance());
