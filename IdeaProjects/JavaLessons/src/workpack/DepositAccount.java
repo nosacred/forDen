@@ -29,6 +29,8 @@ public class DepositAccount extends BankAccount {
         LocalDate now = LocalDate.now();
         if (now.isAfter(lastPlus.plusMonths(1))) {
             return super.sendMoney(client, amount);
-        } else return false;
+        } else
+            System.out.println("Вы не можете снимать деньги в течние месяца!");
+        return false;
     }
 }
